@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Telered</string>
+    <string name="title_activity_main">Telered</string>
+    <string name="package_name">com.telered.transfers</string>
+    <string name="custom_url_scheme">com.telered.transfers</string>
+</resources>

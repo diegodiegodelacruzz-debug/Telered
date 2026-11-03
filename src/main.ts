@@ -1,0 +1,241 @@
+import './style.css'
+
+const wa = '5491153084471'
+const phone = '01143726444'
+const email = 'reservas@teleredtransfers.com.ar'
+const instagram = 'https://www.instagram.com/grupotransfers'
+const address = 'Guaraní 26, Parque Patricios, CABA'
+
+const services = [
+  { icon: '✦', title: 'Traslados ejecutivos particulares', desc: 'Movilidad privada, comodidad y atención personalizada para cada viaje.', image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85' },
+  { icon: '◈', title: 'Traslados corporativos', desc: 'Soluciones de transporte para empresas, directivos y profesionales.', image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85' },
+  { icon: '✈', title: 'Ezeiza y Aeroparque', desc: 'Traslados hacia y desde los principales aeropuertos.', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85' },
+  { icon: '⌁', title: 'Larga distancia', desc: 'Viajes al interior del país con coordinación previa.', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85' },
+  { icon: '▦', title: 'Eventos y congresos', desc: 'Organización de traslados para encuentros, convenciones y eventos.', image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=85' },
+  { icon: '♙', title: 'Traslado de personal', desc: 'Servicios programados para equipos de trabajo y compañías.', image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85' },
+  { icon: '◇', title: 'Servicio VIP', desc: 'Una experiencia de traslado exclusiva y atención diferencial.', image: 'https://www.mrdrivers.com.au/images/campaign/mrdrivers/corporate-roadshow-s-class-cbd-960.webp' },
+  { icon: '▤', title: 'Vans y minibuses', desc: 'Alternativas de transporte para grupos y contingentes.', image: 'https://cd.wheely.com/2x_2024_Dec_Classes_XL_Meta_Image_355218f9a2.jpg' },
+  { icon: '⌂', title: 'Hoteles y turismo', desc: 'Movilidad para huéspedes, visitantes y operadores turísticos.', image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85' }
+]
+
+const fleet = [
+  { title: 'Sedanes ejecutivos', desc: 'Confort y elegancia para viajes particulares y corporativos.', image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=90' },
+  { title: 'Vehículos premium', desc: 'Una experiencia diferencial para servicios VIP.', image: 'https://danyaltransport.com/assets/bmw-7-series-DpEeuT9H.jpg' },
+  { title: 'Vans y transporte grupal', desc: 'Espacio y comodidad para grupos y equipos de trabajo.', image: 'https://www.manchesterdigital.com/storage/32253/manchester-airport-to-liverpool-chauffeur-transfer-v-class-terminal-mcrexec.png' }
+]
+
+const serviceCards = services.map((s, i) => `
+  <article class="service-card reveal" style="--delay:${i * 65}ms">
+    <div class="service-photo" style="background-image:url('${s.image}')"></div>
+    <div class="service-shade"></div>
+    <div class="service-content">
+      <span class="service-icon">${s.icon}</span>
+      <h3>${s.title}</h3>
+      <p>${s.desc}</p>
+      <a class="text-link" href="#contacto" data-service="${s.title}">Consultar servicio <span>↗</span></a>
+    </div>
+  </article>
+`).join('')
+
+const fleetCards = fleet.map((f, i) => `
+  <article class="fleet-card reveal">
+    <button class="fleet-image image-open" type="button" data-image="${f.image}" aria-label="Ampliar fotografía de ${f.title}">
+      <img src="${f.image}" alt="${f.title}" loading="lazy">
+      <span class="zoom-mark">＋</span>
+    </button>
+    <div class="fleet-info"><span class="eyebrow">CATEGORÍA ${String(i + 1).padStart(2, '0')}</span><h3>${f.title}</h3><p>${f.desc}</p></div>
+  </article>
+`).join('')
+
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+  <header class="brand-header">
+    <button class="brand-image image-open" type="button" data-image="/images/logo.jpg" aria-label="Ampliar logo de Telered">
+      <img src="/images/logo.jpg" alt="Telered - Remises ejecutivos y traslados corporativos">
+    </button>
+  </header>
+
+  <nav class="navbar">
+    <a class="nav-brand" href="#inicio">TELERED <span>TRANSFERS</span></a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a><a href="#empresa">Empresa</a><a href="#servicios">Servicios</a><a href="#flota">Nuestra flota</a><a href="#clientes">Clientes</a><a href="#contacto">Contacto</a>
+    </div>
+    <a class="nav-whatsapp" href="https://wa.me/${wa}?text=${encodeURIComponent('Hola, quisiera solicitar información sobre los servicios de Telered.')}" target="_blank" rel="noopener"> <span>◉</span> 11 5308-4471</a>
+  </nav>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-bg"></div><div class="hero-grid"></div>
+      <div class="hero-content">
+        <span class="eyebrow hero-eyebrow"><i></i> TRANSPORTE EJECUTIVO Y CORPORATIVO</span>
+        <h1>Tu viaje.<br><span>Nuestra prioridad.</span></h1>
+        <p class="hero-lead">Movilidad ejecutiva, corporativa y privada con atención personalizada las 24 horas.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#contacto">Solicitar presupuesto <span>↗</span></a>
+          <a class="btn-ghost" href="#servicios">Conocer servicios <span>↓</span></a>
+        </div>
+        <div class="hero-trust"><span>24/7</span><div><strong>Atención permanente</strong><small>Coordinamos tu próximo traslado</small></div></div>
+      </div>
+      <div class="hero-bottom"><span>CONFORT</span><i></i><span>PUNTUALIDAD</span><i></i><span>CONFIANZA</span></div>
+      <div class="hero-scroll">DESLIZÁ PARA DESCUBRIR <span>↓</span></div>
+    </section>
+
+    <section class="intro section" id="empresa">
+      <div class="section-kicker"><span>01 / TELERED</span><i></i> QUIÉNES SOMOS</div>
+      <div class="intro-layout">
+        <div><h2>Movilidad a la altura<br>de <span>cada compromiso.</span></h2></div>
+        <div class="intro-copy"><p>En Telered brindamos soluciones de transporte ejecutivo y corporativo para particulares, empresas, instituciones y organizaciones. Trabajamos para que cada traslado sea una experiencia cómoda, coordinada y confiable.</p><p>Ofrecemos atención permanente, planificación de recorridos y alternativas de movilidad adaptadas a las necesidades de cada cliente.</p><a class="text-link" href="#contacto">Hablemos de tu próximo viaje <span>↗</span></a></div>
+      </div>
+      <div class="stats">
+        <div><strong>24<span>/7</span></strong><small>Atención permanente</small></div>
+        <div><strong>09</strong><small>Servicios de transporte</small></div>
+        <div><strong>01</strong><small>Equipo de coordinación</small></div>
+        <div><strong>100<span>%</span></strong><small>Atención personalizada</small></div>
+      </div>
+    </section>
+
+    <section class="services-section section" id="servicios">
+      <div class="section-kicker"><span>02 / SOLUCIONES</span><i></i> NUESTROS SERVICIOS</div>
+      <div class="section-heading"><div><h2>Una solución para<br><span>cada destino.</span></h2></div><p>Servicios flexibles para viajes personales, operaciones corporativas y necesidades de transporte especiales.</p></div>
+      <div class="services-grid">${serviceCards}</div>
+    </section>
+
+    <section class="fleet-section section" id="flota">
+      <div class="section-kicker"><span>03 / VEHÍCULOS</span><i></i> NUESTRA FLOTA</div>
+      <div class="section-heading"><div><h2>Comodidad en<br><span>cada recorrido.</span></h2></div><p>Contamos con alternativas de transporte para diferentes necesidades, desde traslados individuales hasta grupos numerosos.</p></div>
+      <div class="fleet-grid">${fleetCards}</div>
+      <p class="fleet-note">Fotografías ilustrativas. Los vehículos disponibles se coordinan según el servicio solicitado.</p>
+    </section>
+
+    <section class="airport-banner">
+      <div class="airport-image"></div><div class="airport-overlay"></div>
+      <div class="airport-content"><span class="eyebrow">CONECTAMOS TUS DESTINOS</span><h2>De puerta a puerta.<br><span>Con tranquilidad.</span></h2><p>Coordiná tus traslados a Ezeiza, Aeroparque, hoteles, reuniones y destinos de larga distancia.</p><a class="btn-primary" href="https://wa.me/${wa}?text=${encodeURIComponent('Hola Telered, quiero consultar por un traslado.')}" target="_blank" rel="noopener">Coordinar un traslado ↗</a></div>
+    </section>
+
+    <section class="corporate section">
+      <div class="corporate-visual"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=90" alt="Entorno corporativo" loading="lazy"><div class="visual-caption"><span>TRANSPORTE CORPORATIVO</span><strong>Tu operación, en movimiento.</strong></div></div>
+      <div class="corporate-copy"><div class="section-kicker"><span>04 / EMPRESAS</span><i></i> SOLUCIONES CORPORATIVAS</div><h2>Tu empresa necesita<br><span>un aliado en movilidad.</span></h2><p>Diseñamos alternativas de transporte para organizaciones que necesitan coordinar viajes de directivos, colaboradores, invitados y equipos de trabajo.</p><ul><li>Coordinación de traslados empresariales</li><li>Transporte de personal</li><li>Eventos, congresos y reuniones</li><li>Atención para hoteles y turismo</li></ul><a class="btn-primary" href="https://wa.me/${wa}?text=${encodeURIComponent('Hola Telered, represento a una empresa y quisiera consultar por un servicio corporativo.')}" target="_blank" rel="noopener">Consultar por empresas ↗</a></div>
+    </section>
+
+
+    <section class="clients-section section" id="clientes">
+      <div class="section-kicker"><span>05 / CONFIANZA</span><i></i> NUESTRA EXPERIENCIA CORPORATIVA</div>
+      <div class="section-heading clients-heading">
+        <div>
+          <h2>Empresas que<br><span>confían en Telered.</span></h2>
+        </div>
+        <p>Acompañamos a organizaciones de distintos sectores con soluciones de movilidad y transporte, construyendo relaciones basadas en la confianza y el compromiso.</p>
+      </div>
+
+      <div class="clients-grid">
+        <article class="client-logo-card reveal" style="--delay:0ms"><img src="/images/clientes/raizen.svg" alt="Raízen" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:50ms"><img src="/images/clientes/shell.png" alt="Shell" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:100ms"><img src="/images/clientes/ministerio-educacion.png" alt="Ministerio de Educación Argentina" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:150ms"><img src="/images/clientes/calsa.png" alt="Calsa" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:200ms"><img src="/images/clientes/clarin.svg" alt="Clarín" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:250ms"><img src="/images/clientes/banco-credicoop.svg" alt="Banco Credicoop" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:300ms"><img src="/images/clientes/farmacity.png" alt="Farmacity" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:350ms"><img src="/images/clientes/hospital-aleman.svg" alt="Hospital Alemán" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:400ms"><img src="/images/clientes/ike.svg" alt="Ike" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:450ms"><img src="/images/clientes/coteminas.png" alt="Coteminas Argentina" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:500ms"><img src="/images/clientes/citibank.png" alt="Citibank" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:550ms"><img src="/images/clientes/supervielle.png" alt="Banco Supervielle" loading="lazy"></article>
+      </div>
+      <p class="clients-note">Marcas e identidades institucionales de las organizaciones mencionadas.</p>
+    </section>
+
+    <section class="contact-section section" id="contacto">
+      <div class="section-kicker"><span>06 / CONTACTO</span><i></i> ESTAMOS PARA AYUDARTE</div>
+      <div class="section-heading"><div><h2>Tu próximo viaje<br><span>empieza acá.</span></h2></div><p>Contanos qué traslado necesitás. Nuestro equipo está disponible las 24 horas para recibir tu consulta.</p></div>
+      <div class="contact-layout">
+        <form class="quote-form" id="quote-form">
+          <h3>Solicitá tu presupuesto</h3><p>Completá los datos y enviaremos tu consulta por WhatsApp.</p>
+          <label>Nombre y apellido<input name="name" required placeholder="Tu nombre"></label>
+          <label>Tipo de servicio<select name="service" required><option value="">Seleccionar servicio</option>${services.map(s=>`<option>${s.title}</option>`).join('')}</select></label>
+          <div class="form-row"><label>Origen<input name="origin" placeholder="Desde dónde"></label><label>Destino<input name="destination" placeholder="Hacia dónde"></label></div>
+          <label>Fecha y horario aproximado<input name="date" placeholder="Ej.: 15/11 - 09:30 hs"></label>
+          <label>Mensaje<textarea name="message" rows="3" placeholder="Cantidad de pasajeros u otros detalles"></textarea></label>
+          <button class="btn-primary form-submit" type="submit">Enviar consulta por WhatsApp ↗</button>
+        </form>
+        <div class="contact-details">
+          <div class="contact-card"><span class="contact-icon">◉</span><div><small>WHATSAPP</small><a href="https://wa.me/${wa}" target="_blank" rel="noopener">+54 9 11 5308-4471</a><p>Consultas y presupuestos</p></div></div>
+          <div class="contact-card"><span class="contact-icon">☎</span><div><small>TELÉFONO</small><a href="tel:+541143726444">${phone}</a><p>Línea de contacto</p></div></div>
+          <div class="contact-card"><span class="contact-icon">✉</span><div><small>CORREO ELECTRÓNICO</small><a href="mailto:${email}">${email}</a><p>Escribinos tu consulta</p></div></div>
+          <div class="contact-card"><span class="contact-icon">⌖</span><div><small>DIRECCIÓN</small><strong>${address}</strong><p>Ciudad Autónoma de Buenos Aires</p></div></div>
+          <div class="hours-card"><span class="pulse"></span><div><strong>Atención las 24 horas</strong><small>Todos los días · Coordinación permanente</small></div><b>24/7</b></div>
+          <a class="instagram-link" href="${instagram}" target="_blank" rel="noopener"><span>◎</span><div><small>SEGUINOS EN INSTAGRAM</small><strong>@grupotransfers</strong></div><b>↗</b></a>
+        </div>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}" target="_blank" rel="noopener"><span>⌖</span> Ver ubicación en Google Maps <b>↗</b></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#inicio" class="footer-brand">TELERED<span>TRANSFERS</span></a>
+    <p>Remises ejecutivos y traslados corporativos.<br>Movilidad y atención permanente.</p>
+    <div class="footer-links"><a href="#empresa">Empresa</a><a href="#servicios">Servicios</a><a href="#flota">Nuestra flota</a><a href="#clientes">Clientes</a><a href="#contacto">Contacto</a></div>
+    <div class="footer-bottom"><span>© ${new Date().getFullYear()} Telered Transfers. Todos los derechos reservados.</span><a href="${instagram}" target="_blank" rel="noopener">@grupotransfers ↗</a></div>
+  </footer>
+
+  <a class="floating-wa" href="https://wa.me/${wa}?text=${encodeURIComponent('Hola Telered, quisiera consultar por un traslado.')}" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><span>◉</span><b>WhatsApp</b></a>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada"><button class="lightbox-close" aria-label="Cerrar">×</button><img src="" alt="Imagen ampliada"></div>
+`
+
+const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle')!
+const navLinks = document.querySelector<HTMLElement>('.nav-links')!
+menuToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open')
+  menuToggle.setAttribute('aria-expanded', String(open))
+  menuToggle.textContent = open ? '×' : '☰'
+})
+navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  navLinks.classList.remove('open')
+  menuToggle.setAttribute('aria-expanded', 'false')
+  menuToggle.textContent = '☰'
+}))
+
+const lightbox = document.querySelector<HTMLDivElement>('#lightbox')!
+const lightboxImage = lightbox.querySelector<HTMLImageElement>('img')!
+const closeLightbox = () => lightbox.classList.remove('active')
+document.querySelectorAll<HTMLButtonElement>('.image-open').forEach(button => {
+  button.addEventListener('click', () => {
+    lightboxImage.src = button.dataset.image || ''
+    lightbox.classList.add('active')
+  })
+})
+document.querySelector('.lightbox-close')!.addEventListener('click', closeLightbox)
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox() })
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox() })
+
+document.querySelectorAll<HTMLAnchorElement>('[data-service]').forEach(link => {
+  link.addEventListener('click', () => {
+    const select = document.querySelector<HTMLSelectElement>('select[name="service"]')
+    if (select) select.value = link.dataset.service || ''
+  })
+})
+
+document.querySelector<HTMLFormElement>('#quote-form')!.addEventListener('submit', e => {
+  e.preventDefault()
+  const form = new FormData(e.currentTarget as HTMLFormElement)
+  const message = [
+    'Hola Telered, quisiera solicitar un presupuesto.',
+    '',
+    `Nombre: ${form.get('name')}`,
+    `Servicio: ${form.get('service')}`,
+    `Origen: ${form.get('origin') || 'A confirmar'}`,
+    `Destino: ${form.get('destination') || 'A confirmar'}`,
+    `Fecha y horario: ${form.get('date') || 'A confirmar'}`,
+    `Detalles: ${form.get('message') || 'Sin detalles adicionales'}`
+  ].join('\n')
+  window.open(`https://wa.me/${wa}?text=${encodeURIComponent(message)}`, '_blank', 'noopener')
+})
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible')
+      observer.unobserve(entry.target)
+    }
+  })
+}, { threshold: 0.12 })
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
