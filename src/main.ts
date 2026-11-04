@@ -1,26 +1,26 @@
 import './style.css'
 
-const wa = '5491153084471'
-const phone = '01143726444'
+const wa = '5491161593888'
+const phone = '4372-6444'
 const email = 'reservas@teleredtransfers.com.ar'
 const instagram = 'https://www.instagram.com/grupotransfers'
-const address = 'Guaraní 26, Parque Patricios, CABA'
+const address = 'Paraná 426, CABA'
 
 const services = [
-  { icon: '✦', title: 'Traslados ejecutivos particulares', desc: 'Movilidad privada, comodidad y atención personalizada para cada viaje.', image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85' },
+  { icon: '✦', title: 'Traslados ejecutivos particulares', desc: 'Movilidad privada, comodidad y atención personalizada para cada viaje.', image: '/images/sentra.jpg' },
   { icon: '◈', title: 'Traslados corporativos', desc: 'Soluciones de transporte para empresas, directivos y profesionales.', image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85' },
   { icon: '✈', title: 'Ezeiza y Aeroparque', desc: 'Traslados hacia y desde los principales aeropuertos.', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85' },
   { icon: '⌁', title: 'Larga distancia', desc: 'Viajes al interior del país con coordinación previa.', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85' },
   { icon: '▦', title: 'Eventos y congresos', desc: 'Organización de traslados para encuentros, convenciones y eventos.', image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=85' },
   { icon: '♙', title: 'Traslado de personal', desc: 'Servicios programados para equipos de trabajo y compañías.', image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85' },
-  { icon: '◇', title: 'Servicio VIP', desc: 'Una experiencia de traslado exclusiva y atención diferencial.', image: 'https://www.mrdrivers.com.au/images/campaign/mrdrivers/corporate-roadshow-s-class-cbd-960.webp' },
+  { icon: '◇', title: 'Servicio VIP', desc: 'Una experiencia de traslado exclusiva y atención diferencial.', image: '/images/corolla.jpg' },
   { icon: '▤', title: 'Vans y minibuses', desc: 'Alternativas de transporte para grupos y contingentes.', image: 'https://cd.wheely.com/2x_2024_Dec_Classes_XL_Meta_Image_355218f9a2.jpg' },
   { icon: '⌂', title: 'Hoteles y turismo', desc: 'Movilidad para huéspedes, visitantes y operadores turísticos.', image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85' }
 ]
 
 const fleet = [
-  { title: 'Sedanes ejecutivos', desc: 'Confort y elegancia para viajes particulares y corporativos.', image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=90' },
-  { title: 'Vehículos premium', desc: 'Una experiencia diferencial para servicios VIP.', image: 'https://danyaltransport.com/assets/bmw-7-series-DpEeuT9H.jpg' },
+  { title: 'Sedanes ejecutivos', desc: 'Confort y elegancia para viajes particulares y corporativos.', image: '/images/corolla.jpg' },
+  { title: 'Vehículos premium', desc: 'Una experiencia diferencial para servicios VIP.', image: '/images/sentra.jpg' },
   { title: 'Vans y transporte grupal', desc: 'Espacio y comodidad para grupos y equipos de trabajo.', image: 'https://www.manchesterdigital.com/storage/32253/manchester-airport-to-liverpool-chauffeur-transfer-v-class-terminal-mcrexec.png' }
 ]
 
@@ -87,10 +87,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <div class="intro-copy"><p>En Telered brindamos soluciones de transporte ejecutivo y corporativo para particulares, empresas, instituciones y organizaciones. Trabajamos para que cada traslado sea una experiencia cómoda, coordinada y confiable.</p><p>Ofrecemos atención permanente, planificación de recorridos y alternativas de movilidad adaptadas a las necesidades de cada cliente.</p><a class="text-link" href="#contacto">Hablemos de tu próximo viaje <span>↗</span></a></div>
       </div>
       <div class="stats">
-        <div><strong>24<span>/7</span></strong><small>Atención permanente</small></div>
-        <div><strong>09</strong><small>Servicios de transporte</small></div>
-        <div><strong>01</strong><small>Equipo de coordinación</small></div>
-        <div><strong>100<span>%</span></strong><small>Atención personalizada</small></div>
+        <div><strong>24<span>/7</span></strong><small>ATENCIÓN Y COORDINACIÓN</small><p>Disponibilidad permanente para organizar cada traslado.</p></div>
+        <div><strong>365</strong><small>DÍAS DEL AÑO</small><p>Movilidad ejecutiva durante todo el año.</p></div>
       </div>
     </section>
 
@@ -158,7 +156,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           <button class="btn-primary form-submit" type="submit">Enviar consulta por WhatsApp ↗</button>
         </form>
         <div class="contact-details">
-          <div class="contact-card"><span class="contact-icon">◉</span><div><small>WHATSAPP</small><a href="https://wa.me/${wa}" target="_blank" rel="noopener">+54 9 11 5308-4471</a><p>Consultas y presupuestos</p></div></div>
+          <div class="contact-card"><span class="contact-icon">◉</span><div><small>WHATSAPP</small><a href="https://wa.me/${wa}" target="_blank" rel="noopener">+54 9 11 6159-3888</a><p>Consultas y presupuestos</p></div></div>
           <div class="contact-card"><span class="contact-icon">☎</span><div><small>TELÉFONO</small><a href="tel:+541143726444">${phone}</a><p>Línea de contacto</p></div></div>
           <div class="contact-card"><span class="contact-icon">✉</span><div><small>CORREO ELECTRÓNICO</small><a href="mailto:${email}">${email}</a><p>Escribinos tu consulta</p></div></div>
           <div class="contact-card"><span class="contact-icon">⌖</span><div><small>DIRECCIÓN</small><strong>${address}</strong><p>Ciudad Autónoma de Buenos Aires</p></div></div>
