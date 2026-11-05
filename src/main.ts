@@ -126,18 +126,12 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>
 
       <div class="clients-grid">
-        <article class="client-logo-card reveal" style="--delay:0ms"><img src="/images/clientes/raizen.svg" alt="Raízen" loading="lazy"></article>
-        <article class="client-logo-card reveal" style="--delay:50ms"><img src="/images/clientes/shell.png" alt="Shell" loading="lazy"></article>
-        <article class="client-logo-card reveal" style="--delay:100ms"><img src="/images/clientes/ministerio-educacion.png" alt="Ministerio de Educación Argentina" loading="lazy"></article>
-        <article class="client-logo-card reveal" style="--delay:150ms"><img src="/images/clientes/calsa.png" alt="Calsa" loading="lazy"></article>
-        <article class="client-logo-card reveal" style="--delay:200ms"><img src="/images/clientes/clarin.svg" alt="Clarín" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:0ms"><img src="/images/clientes/ministerio-educacion.png" alt="Ministerio de Educación Argentina" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:50ms"><img src="/images/clientes/clarin.svg" alt="Clarín" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:100ms"><img src="/images/clientes/ike.svg" alt="IKE" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:150ms"><img src="/images/clientes/coteminas.png" alt="Coteminas" loading="lazy"></article>
+        <article class="client-logo-card reveal" style="--delay:200ms"><img src="/images/clientes/hospital-aleman.svg" alt="Hospital Alemán" loading="lazy"></article>
         <article class="client-logo-card reveal" style="--delay:250ms"><img src="/images/clientes/banco-credicoop.svg" alt="Banco Credicoop" loading="lazy"></article>
-        <article class="client-logo-card reveal" style="--delay:300ms"><img src="/images/clientes/farmacity.png" alt="Farmacity" loading="lazy"></article>
-        <article class="client-logo-card reveal" style="--delay:350ms"><img src="/images/clientes/hospital-aleman.svg" alt="Hospital Alemán" loading="lazy"></article>
-        <article class="client-logo-card reveal" style="--delay:400ms"><img src="/images/clientes/ike.svg" alt="Ike" loading="lazy"></article>
-        <article class="client-logo-card reveal" style="--delay:450ms"><img src="/images/clientes/coteminas.png" alt="Coteminas Argentina" loading="lazy"></article>
-        <article class="client-logo-card reveal" style="--delay:500ms"><img src="/images/clientes/citibank.png" alt="Citibank" loading="lazy"></article>
-        <article class="client-logo-card reveal" style="--delay:550ms"><img src="/images/clientes/supervielle.png" alt="Banco Supervielle" loading="lazy"></article>
       </div>
       <p class="clients-note">Marcas e identidades institucionales de las organizaciones mencionadas.</p>
     </section>
